@@ -1,0 +1,22 @@
+econ_ros2_driver:
+  ros__parameters:    
+    # hardware 
+    device:         "/dev/24cug"     # device path
+    hid_device:     "/dev/24cug_hid" # hid device path
+    
+    localhost_only:  true  # if true, only use loopback interface for communication.
+    fastdds_pc_xml:       "fastdds_pc.xml"
+    fastdds_jetson_xml:   "fastdds_jetson.xml"
+    fastdds_loopback_xml: "fastdds_loopback.xml"
+    
+    # cam control
+    auto_exposure:  false
+    exposure_us:    10000    # [us]
+    resolution:     "hd" # sd | hd | fhd | wuxga
+    
+    # ros2 topic 
+    compressed:     false #  true | false
+    topic_name:     "/camera/image" # if compressed, "/camera/image/compressed" 
+    frame_id:       "camera_init"
+    backend:        "gstreamer" # gstreamer | opencv
+    
